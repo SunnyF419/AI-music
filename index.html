@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI Music Player</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="player-shell">
+      <section class="library" aria-label="歌曲列表">
+        <div class="brand">
+          <span class="brand-mark"></span>
+          <div>
+            <h1>AI Music</h1>
+            <p>本地音乐播放器</p>
+          </div>
+        </div>
+
+        <div id="trackList" class="track-list"></div>
+      </section>
+
+      <section class="stage" aria-label="正在播放">
+        <div class="now-playing">
+          <p class="eyebrow">Now Playing</p>
+          <h2 id="trackTitle">选择一首歌</h2>
+          <p id="trackMeta">点击左侧列表开始播放</p>
+        </div>
+
+        <div class="visualizer" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+
+        <div class="lyrics-wrap" aria-label="自动滚动字幕">
+          <div id="lyrics" class="lyrics"></div>
+        </div>
+
+        <div class="caption-tools">
+          <span id="captionStatus">字幕待加载</span>
+          <button id="delayCaptionsBtn" class="small-button" type="button">字幕延后</button>
+          <button id="advanceCaptionsBtn" class="small-button" type="button">字幕提前</button>
+          <button id="exportCaptionsBtn" class="small-button" type="button">导出字幕</button>
+        </div>
+
+        <div class="transport">
+          <button id="prevBtn" class="icon-button" type="button" aria-label="上一首">‹</button>
+          <button id="playBtn" class="play-button" type="button" aria-label="播放">▶</button>
+          <button id="nextBtn" class="icon-button" type="button" aria-label="下一首">›</button>
+        </div>
+
+        <div class="timeline">
+          <span id="currentTime">0:00</span>
+          <input id="seek" type="range" min="0" max="0" step="0.01" value="0" aria-label="播放进度" />
+          <span id="duration">0:00</span>
+        </div>
+
+        <audio id="audio" preload="metadata"></audio>
+      </section>
+    </main>
+
+    <script src="music-manifest.js"></script>
+    <script src="caption-provider.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
