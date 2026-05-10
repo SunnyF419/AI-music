@@ -3,8 +3,8 @@ window.MUSIC_TRACKS = [
     id: "left-tail-side-answers",
     title: "Left-Tail Side Answers",
     artist: "AI Music",
-    src: "./Left-Tail%20Side%20Answers.mp3",
-    captions: "./Left-Tail%20Side%20Answers.lrc"
+    src: "./left-lail-side-answers.mp3",
+    captions: "./left-lail-side-answers.lrc"
   },
   {
     id: "zuo-wei-dui-bai",
